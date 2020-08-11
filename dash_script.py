@@ -908,14 +908,18 @@ def fix_draggability(n_clicks):
     if n_clicks%2 == 1:
         return False, False, False, False, False, False, False
     return True, True, True, True, True, True, True
+logged_in = False
 @app.callback(
     [Output('main','style'),Output('content','style')],
     [Input('login-button','n_clicks'),Input('logout','n_clicks')],
     [State('username','value'),State('password','value')])
 def login(n_clicks1, n_clicks2, username, password):
-    if (n_clicks2 is None or n_clicks1>n_clicks2) and username == 'Police' and password == 'Indian':
+    global logged_in
+    if logged_in == False and username == 'Hello' and password == 'World':
+        logged_in = True
         return {'display':'none'},{'display':'block'}
     else:
+        logged_in = False
         return {'display':'block'},{'display':'none'}
 
 @app.callback(
