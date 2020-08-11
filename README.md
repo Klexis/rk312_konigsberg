@@ -11,7 +11,9 @@
 ### Usage
 - Run pip install -r requirements.txt to install necessary requirements
 - Run python dash_script.py
-
+- Credentials:
+    - Username: Hello
+    - Password: World
 ### Data
 - Data has been generated artificially 
 - Cell tower data has been taken from opencellid.org
